@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black-box vs White-box Testing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        nav {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="index.html">Home</a> |
+    <a href="functional.html">Functional Testing</a> |
+    <a href="nonfunctional.html">Non-Functional Testing</a> |
+    <a href="testing_types.html">Black-box vs White-box Testing</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a>
+</nav>
+<hr>
+<div class="container">
+    <h1>Black-box vs White-box Testing</h1>
+    <p>This page contains examples of both black-box and white-box testing scenarios. Identify the bugs below.</p>
+
+    <!-- Black-box Testing Section -->
+    <div class="section">
+        <h2>Black-box Testing Scenario</h2>
+        <p>Click the button below to go to the "Contact" page.</p>
+        <button class="button" onclick="window.location.href='about.html'">Go to Contact Page</button>
+        <!-- Bug: The button redirects to the wrong page (about.html instead of contact.html) -->
+    </div>
+
+    <!-- White-box Testing Section -->
+    <div class="section">
+        <h2>White-box Testing Scenario</h2>
+        <p>Enter two numbers below to calculate their sum:</p>
+        <input type="number" id="num1" placeholder="Number 1">
+        <input type="number" id="num2" placeholder="Number 2">
+        <button class="button" onclick="calculateSum()">Calculate Sum</button>
+        <p id="result"></p>
+        <!-- Bug: The sum calculation is incorrect due to a logical error in the code -->
+    </div>
+</div>
+
+<script>
+    // White-box bug: Incorrect logic for summing the numbers
+    function calculateSum() {
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
+        let sum = num1 + num2 + 1; // Bug: Incorrect logic (extra +1 added)
+        document.getElementById('result').innerText = "Sum: " + sum;
+    }
+</script>
+</body>
+</html>
