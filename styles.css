@@ -13,8 +13,16 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollable container specific for the testing_types page */
+.scrollable-container {
+    max-height: calc(100vh - 150px); /* Adjust based on header/footer size */
+    overflow-y: auto;
+    padding-bottom: 20px;
 }
 
 /* Container for content */
@@ -105,10 +113,7 @@ footer {
     background-color: #34495e;
     color: #ecf0f1;
     border-radius: 8px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
+    margin-top: auto;
 }
 
 /* Section styles */
