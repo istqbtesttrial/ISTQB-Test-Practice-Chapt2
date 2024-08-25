@@ -18,9 +18,10 @@ body {
     flex-direction: column;
 }
 
-/* Container for content */
+/* Container for content with consistent width */
 .container {
-    max-width: 800px;
+    width: 800px;
+    max-width: 100%;
     margin: 40px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -126,7 +127,8 @@ hr {
 /* Responsive design */
 @media (max-width: 768px) {
     .container {
-        margin: 20px;
+        width: 90%;
+        margin: 20px auto;
         padding: 15px;
     }
 
